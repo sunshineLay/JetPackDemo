@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--把整个布局交给DataBinding管理-->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--和类交互-->
+    <data>
+        <variable
+            name="vm"
+            type="com.example.jetpackdemo.day01.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <!--DataBinding 绑定ViewModel-->
+        <!--ViewModel的使用-->
+
+        <!--1.ViewModel里面的全局变量直接使用-->
+        <EditText
+            android:hint="请拨打电话号码"
+            android:text="@={vm.phoneNum}"
+            android:inputType="phone|number"
+            android:digits="1234567890"
+            android:layout_width="200dp"
+            android:layout_height="60dp" />
+        <!--2.ViewModel里面的public方法使用-->
+        <Button
+            android:onClick="@{()->vm.callPhone()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拨打电话" />
+
+    </LinearLayout>
+
+</layout>
