@@ -27,10 +27,25 @@ public class TestActivity extends AppCompatActivity {
         phoneNum.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String data) {
-                Log.e("onChanged", "onChanged: 02"+data);
+                Log.e("onChanged", "onChanged: 03"+data);
+            }
+        });
+        phoneNum.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String data) {
+                Log.e("onChanged", "onChanged: 04"+data);
+            }
+        });
+        phoneNum.observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String data) {
+                Log.e("onChanged", "onChanged: 05"+data);
             }
         });
         Log.e("onChanged", "onChanged: 01");
-        phoneNum.postValue("加油");
+        phoneNum.postValue("加油");//异步
+        Log.e("onChanged", "onChanged: 02");
+        phoneNum.setValue("李元霸");//同步
+        //同步在异步前面，一定是同步执行完，异步才会开始执行
     }
 }
