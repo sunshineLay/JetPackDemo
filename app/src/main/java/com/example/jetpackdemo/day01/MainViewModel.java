@@ -1,24 +1,16 @@
 package com.example.jetpackdemo.day01;
 
-import android.Manifest;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.util.Log;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 
-import com.example.jetpackdemo.MainActivity;
 
 /**
  * @TODO: 管理 UI Data
@@ -30,7 +22,8 @@ public class MainViewModel extends AndroidViewModel {
 //    private String phoneNum;
     //LiveData: 感应改变数据
     //主要使用方法：setValue() 和 getValue()
-    private MutableLiveData<String> phoneNum;
+    public MutableLiveData<String> phoneNum;
+    public String data = "";
     private Context mContext;
 
     public MainViewModel(@NonNull Application application) {
