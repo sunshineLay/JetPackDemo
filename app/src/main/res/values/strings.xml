@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JetPackDemo</string>
+    <string name="tv_con_life01">JetPackDemo</string>
+
 </resources>
