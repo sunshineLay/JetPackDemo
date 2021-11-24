@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetPackDemo">
         <activity
-            android:name=".liveData.live02Activity">
+            android:name=".dataBinding.db02Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

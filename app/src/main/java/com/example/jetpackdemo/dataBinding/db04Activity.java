@@ -1,21 +1,18 @@
-package com.example.jetpackdemo.DataBinding;
+package com.example.jetpackdemo.dataBinding;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.jetpackdemo.R;
-
 /**
- * @TODO: 简单使用：单向绑定（从A到xml）
- * @Date: 2021/11/23 16:43
+ * @TODO: 双向绑定
+ * @Date: 2021/11/24 11:38
  * @User: lay
  */
-public class db01Activity extends AppCompatActivity {
+public class db04Activity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.databinding_activity);
     }
 }
