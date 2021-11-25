@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <!-- 打电话权限 -->
     <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".lifecycler.MyLifeApplication"
@@ -18,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetPackDemo">
         <activity
-            android:name=".dataBinding.db02Activity">
+            android:name=".dataBinding.db04Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

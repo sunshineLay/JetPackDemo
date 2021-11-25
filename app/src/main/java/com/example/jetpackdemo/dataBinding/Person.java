@@ -20,4 +20,16 @@ public class Person {
         this.img = img;
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", age=" + age +
+                ", img=" + img +
+                '}';
+    }
+
+
 }
