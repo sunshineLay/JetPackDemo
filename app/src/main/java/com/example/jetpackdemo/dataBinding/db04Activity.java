@@ -7,10 +7,12 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableField;
 
 import com.example.jetpackdemo.R;
 import com.example.jetpackdemo.databinding.Databinding02ActivityBinding;
 import com.example.jetpackdemo.databinding.Db0403ActivityBinding;
+import com.example.jetpackdemo.databinding.Db0404ActivityBinding;
 import com.example.jetpackdemo.databinding.Db04ActivityBinding;
 
 /**
@@ -40,6 +42,9 @@ public class db04Activity extends AppCompatActivity {
     //Demo03
     private Db0403ActivityBinding binding2;
     private NameBean nameBean;
+    //Demo04
+    private Db0404ActivityBinding binding3;
+    private UserBean userBean;
 
 
     @Override
@@ -47,11 +52,19 @@ public class db04Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        initDemo01();
 //        initDemo02();
-        initDemo03();
+//        initDemo03();
+        initDemo04();
 
     }
+    //Demo04 - 双向绑定 - 方案二：@={} + ObserverField
+    // 比BaseObserver更加解耦。因为关联的耦合度低于继承。
+    private void initDemo04() {
+        binding3 = (Db0404ActivityBinding) DataBindingUtil.setContentView(this, R.layout.db04_04_activity);
+        userBean = new UserBean("初始名字");
+        binding3.setUser(userBean);
+    }
 
-    //Demo03 - 双向绑定
+    //Demo03 - 双向绑定 - 方案一：@={} + BaseObserver
     private void initDemo03() {
         binding2 = (Db0403ActivityBinding) DataBindingUtil.setContentView(this, R.layout.db04_03_activity);
         nameBean = new NameBean();
@@ -82,10 +95,18 @@ public class db04Activity extends AppCompatActivity {
         name = "周星驰"+ i++;
         Log.e("db04Activity", "changeCon: "+ name);
     }
-    //Demo03 - 双向绑定
+    //Demo03 - 双向绑定 - 方案一
     public void changeCon2(View view) {
         nameBean.setName("周星驰"+nameBean.getName());
         Log.e("db04Activity", "changeCon: "+ nameBean.getName());
+    }
+
+    //Demo04 - 双向绑定 - 方案二
+    public void changeCon3(View view) {
+        ObservableField<String> name = userBean.getName();
+        name.set(name.get()+ i++);
+        userBean.setName(name);
+        Log.e("db04Activity", "changeCon3: "+ userBean.getName().get());
     }
 
 

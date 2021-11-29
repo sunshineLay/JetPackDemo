@@ -15,7 +15,6 @@
 
         <ImageView
             android:id="@+id/img_pic"
-            context="@{image.context}"
             imageUrl="@{image.url}"
             placeholder="@{image.placeholder}"
             android:layout_width="290dp"

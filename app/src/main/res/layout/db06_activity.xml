@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_teamA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="60dp"
+            android:text="TEAM-A"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_teamB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="56dp"
+            android:text="TEAM-B"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_gradeA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="72dp"
+            android:text="5"
+            android:textColor="#FF1744"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tv_teamA" />
+
+        <TextView
+            android:id="@+id/tv_gradeB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="60dp"
+            android:text="10"
+            android:textColor="#2979FF"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tv_teamB" />
+
+        <Button
+            android:id="@+id/btn_add1A"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="64dp"
+            android:text="+1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gradeA" />
+
+        <Button
+            android:id="@+id/btn_add2A"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:text="+2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add1A" />
+
+        <Button
+            android:id="@+id/btn_add3A"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:text="+3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add2A" />
+
+        <Button
+            android:id="@+id/btn_add1B"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="64dp"
+            android:text="+1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gradeB" />
+
+        <Button
+            android:id="@+id/btn_add2B"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:text="+2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add1B" />
+
+        <Button
+            android:id="@+id/btn_add3B"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:text="+3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add2B" />
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/back"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add3A" />
+
+        <ImageView
+            android:id="@+id/img_update"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="42dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/update"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add3B" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
