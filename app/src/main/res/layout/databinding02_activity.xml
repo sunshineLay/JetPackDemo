@@ -7,7 +7,7 @@
     <data>
         <variable
             name="person"
-            type="com.example.jetpackdemo.dataBinding.Person" />
+            type="com.example.jetpackdemo.dataBinding.PersonViewModel" />
 
         <import type="com.example.jetpackdemo.dataBinding.TestUtils"/>
     </data>
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5512996" />
+            app:layout_constraintGuide_percent="0.55" />
 
         <ImageView
             android:id="@+id/img_pic"
@@ -40,7 +40,7 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{person.name}"
+            android:text="@{person.personName}"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/tv_age"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,10 +80,11 @@
             android:layout_height="54dp"
             android:layout_marginTop="32dp"
             android:text="点击改变"
-            android:onClick="changeContent"
+            android:onClick="changeContent2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_pic" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
