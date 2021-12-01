@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetPackDemo">
         <activity
-            android:name=".dataBinding.db06Activity">
+            android:name=".room.Room01Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

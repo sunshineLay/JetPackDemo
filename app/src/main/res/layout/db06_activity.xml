@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="vm"
+            type="com.example.jetpackdemo.dataBinding.Db06ViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:layout_marginEnd="72dp"
-            android:text="5"
+            android:text="@{String.valueOf(vm.getaTeamScore())}"
             android:textColor="#FF1744"
             android:textSize="40sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -58,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="72dp"
             android:layout_marginTop="60dp"
-            android:text="10"
+            android:text="@{String.valueOf(vm.getbTeamScore())}"
             android:textColor="#2979FF"
             android:textSize="40sp"
             app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -70,6 +72,7 @@
             android:layout_height="45dp"
             android:layout_marginTop="64dp"
             android:text="+1"
+            android:onClick="@{()->vm.addATeamScore(1)}"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_gradeA" />
@@ -80,6 +83,7 @@
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
             android:text="+2"
+            android:onClick="@{()->vm.addATeamScore(2)}"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
@@ -91,6 +95,7 @@
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
             android:text="+3"
+            android:onClick="@{()->vm.addATeamScore(3)}"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_add2A" />
@@ -101,6 +106,7 @@
             android:layout_height="45dp"
             android:layout_marginTop="64dp"
             android:text="+1"
+            android:onClick="@{()->vm.addBTeamScore(1)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/tv_gradeB" />
@@ -111,6 +117,7 @@
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
             android:text="+2"
+            android:onClick="@{()->vm.addBTeamScore(2)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/btn_add1B" />
@@ -121,6 +128,7 @@
             android:layout_height="45dp"
             android:layout_marginTop="40dp"
             android:text="+3"
+            android:onClick="@{()->vm.addBTeamScore(3)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/btn_add2B" />
@@ -130,6 +138,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/back"
+            android:onClick="@{()->vm.undo()}"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="40dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -139,6 +148,7 @@
             android:id="@+id/img_update"
             android:layout_width="36dp"
             android:layout_height="36dp"
+            android:onClick="@{()->vm.update()}"
             android:layout_marginStart="40dp"
             android:layout_marginTop="42dp"
             android:scaleType="centerInside"
