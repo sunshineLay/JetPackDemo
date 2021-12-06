@@ -2,8 +2,11 @@ package com.example.jetpackdemo.lifecycler;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.DefaultLifecycleObserver;
+import androidx.lifecycle.LifecycleOwner;
 
 import com.example.jetpackdemo.R;
 
@@ -27,6 +30,38 @@ public class Demo01LifeActivity extends AppCompatActivity {
 
     private void initUI() {
         myChronometer = (MyChronometer) findViewById(R.id.chronometer);
+        //最基本用法
+        getLifecycle().addObserver(new DefaultLifecycleObserver() {
+            @Override
+            public void onCreate(@NonNull LifecycleOwner owner) {
+
+            }
+
+            @Override
+            public void onStart(@NonNull LifecycleOwner owner) {
+
+            }
+
+            @Override
+            public void onResume(@NonNull LifecycleOwner owner) {
+
+            }
+
+            @Override
+            public void onPause(@NonNull LifecycleOwner owner) {
+
+            }
+
+            @Override
+            public void onStop(@NonNull LifecycleOwner owner) {
+
+            }
+
+            @Override
+            public void onDestroy(@NonNull LifecycleOwner owner) {
+
+            }
+        });
         getLifecycle().addObserver(myChronometer);
     }
 }
