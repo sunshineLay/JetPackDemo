@@ -19,6 +19,11 @@ import java.util.TimerTask;
  * @TODO: 简单应用: 倒计时更新（LiveData和ViewModel）
  * @Date: 2021/11/23 11:39
  * @User: lay
+ *
+ * 疑问：
+ * 1.为什么LiveData不能在ViewModel里面使用setValue()?
+ * 2. RecyclerView的DataBinding使用能不能完全脱离Activity？（其他View可以RecyclerView为什么不行？思考：利用Bindadapter应该可以做到。）- 小作业
+ * 3. DataBinding+ViewModel 如果要在对应事件中执行和生命周期相关的方法，就会导致ViewModel 持有Activity引用。当然，最极端可以使用AVM。(尽量不要有点击事件导致finish的操作)
  */
 public class live01Activity extends AppCompatActivity {
 
